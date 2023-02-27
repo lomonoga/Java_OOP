@@ -1,3 +1,5 @@
+package firstTask;
+
 import java.text.DecimalFormat;
 import java.util.Objects;
 import java.util.Scanner;
@@ -31,7 +33,7 @@ public class Program {
         System.out.print("\nСинус: ");
         var decimalFormat = new DecimalFormat( "#.##" );
         for (var angle = 0; angle <= endAngle; angle += 5){
-            var sine = decimalFormat.format(Math.sin(Math.toRadians(angle)));
+            var sine = decimalFormat.format(java.lang.Math.sin(java.lang.Math.toRadians(angle)));
             System.out.print(indentSine + sine);
         }
     }
