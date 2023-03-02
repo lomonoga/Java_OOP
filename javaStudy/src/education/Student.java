@@ -35,7 +35,7 @@ public class Student {
      * "firstName" : firstName of Student
      * "lastName" : lastName of Student
      * "patronymic" : patronymic of Student
-     */
+     * */
     public HashMap getFullName(){
         return new HashMap<String, String>(){{
             put("firstName", firstName);
@@ -47,7 +47,7 @@ public class Student {
     /**
      * The method returns student age
      * Return value type int
-     */
+     * */
     public int getAge() {
         return Period.between(birthDate, LocalDate.now()).getYears();
     }
