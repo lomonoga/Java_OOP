@@ -13,7 +13,11 @@ public class Task {
     public Task(String nameTask, int budget) throws MyException {
         this.nameTask = nameTask;
         setBudget(budget);
-        studentAndMark = new HashMap<Student, Mark>();
+        studentAndMark = new HashMap<>();
+    }
+
+    public String getNameTask(){
+        return this.nameTask;
     }
 
     private void setBudget(int budget) throws MyException {
@@ -36,7 +40,7 @@ public class Task {
      * Returns type bool
      * */
     public boolean stayedWithinBudget() throws MyException{
-        if (studentAndMark.values().size() == 0)
+        if (studentAndMark.values().isEmpty())
             throw new MyException("Вы не добавили ни одного студента");
         var realBudget = 0;
         for (Map.Entry<Student, Mark> entry : studentAndMark.entrySet()) {
