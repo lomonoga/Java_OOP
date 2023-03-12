@@ -1,8 +1,9 @@
 package education;
 
+import education.interfaces.IAdmittance;
 import firstTask.MyException;
 
-public class Mark {
+public class Mark implements IAdmittance {
     private Grade grade;
     private double point;
     private boolean passed;
@@ -33,7 +34,7 @@ public class Mark {
     }
 
     private void setPassed(){
-        this.passed = !(point < 40);
+        this.passed = point >= 40;
     }
 
     private void setGrade(){
@@ -60,5 +61,4 @@ public class Mark {
             return 4100;
         return 0;
     }
-    
 }
