@@ -1,10 +1,17 @@
 package education;
 
 import firstTask.MyException;
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
 
+
+@Getter(AccessLevel.PUBLIC)
+@EqualsAndHashCode
 public class Task {
     private String nameTask;
     private HashMap<Student, Mark> studentAndMark;
@@ -16,16 +23,11 @@ public class Task {
         studentAndMark = new HashMap<>();
     }
 
-    private Task(TaskBuilder taskBuilder){
+    private Task(@NotNull TaskBuilder taskBuilder){
         this.nameTask = taskBuilder.nameTask;
         this.studentAndMark = taskBuilder.studentAndMark;
         this.budget = taskBuilder.budget;
     }
-
-    public String getNameTask(){
-        return this.nameTask;
-    }
-
 
     private void setBudget(int budget) throws MyException {
         if (budget < 0)

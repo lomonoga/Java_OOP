@@ -23,10 +23,9 @@ class TaskTest {
     }
 
     @Test
-    void testBudgetNoStudents() throws MyException {
-        assertThrows(MyException.class, () -> {
-            new Task("NoTask", 10_000).stayedWithinBudget();
-        });
+    void testBudgetNoStudents() {
+        assertThrows(MyException.class, () ->
+            new Task("NoTask", 10_000).stayedWithinBudget());
     }
 
     @Test
