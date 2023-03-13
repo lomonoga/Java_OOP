@@ -4,17 +4,21 @@ import firstTask.MyException;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
-@Getter(AccessLevel.PUBLIC)
 @EqualsAndHashCode
 public class Task {
+    @Getter(AccessLevel.PUBLIC)
+    @Setter(AccessLevel.PUBLIC)
+
     private String nameTask;
+    @Getter(AccessLevel.PUBLIC)
     private HashMap<Student, Mark> studentAndMark;
+    @Getter(AccessLevel.PUBLIC)
     private int budget;
 
     public Task(String nameTask, int budget) throws MyException {
