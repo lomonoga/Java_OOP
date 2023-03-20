@@ -14,7 +14,6 @@ import java.util.Map;
 public class Task {
     @Getter(AccessLevel.PUBLIC)
     @Setter(AccessLevel.PUBLIC)
-
     private String nameTask;
     @Getter(AccessLevel.PUBLIC)
     private HashMap<Student, Mark> studentAndMark;

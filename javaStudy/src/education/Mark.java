@@ -2,24 +2,23 @@ package education;
 
 import education.interfaces.IAdmittance;
 import firstTask.MyException;
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
+@EqualsAndHashCode
 public class Mark implements IAdmittance {
+    @Getter(AccessLevel.PUBLIC)
     private Grade grade;
+    @Getter(AccessLevel.PUBLIC)
     private double point;
+    @Getter(AccessLevel.PUBLIC)
     private boolean passed;
 
     public Mark(double point) throws MyException {
         setPoint(point);
         setGrade();
         setPassed();
-    }
-
-    public Grade getGrade(){
-        return this.grade;
-    }
-
-    public double getPoint(){
-        return this.point;
     }
 
     public boolean getPassed(){

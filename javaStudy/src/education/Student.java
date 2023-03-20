@@ -1,15 +1,22 @@
 package education;
 
 import firstTask.MyException;
+import lombok.*;
+
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.HashMap;
 
+@EqualsAndHashCode
 public class Student {
+    @Getter(AccessLevel.PUBLIC)
     private String firstName;
+    @Getter(AccessLevel.PUBLIC)
     private String lastName;
+    @Getter(AccessLevel.PUBLIC)
     private String patronymic;
+    @Getter(AccessLevel.PUBLIC)
     private LocalDate birthDate;
 
     public Student(String firstName, String lastName, String patronymic, int year, int month, int date) throws MyException {
@@ -62,7 +69,8 @@ public class Student {
         private String patronymic; //optional
         private LocalDate birthDate;
 
-        public StudentBuilder(int year, int month, int date) throws Exception {
+        @SneakyThrows
+        public StudentBuilder(int year, int month, int date) {
             try {
                 var birthDateExc = LocalDate.of(year, month, date);
                 if (birthDateExc.isAfter(LocalDate.now()))
@@ -70,7 +78,7 @@ public class Student {
                 else
                     this.birthDate = birthDateExc;
             }
-            catch (DateTimeException e) {
+            catch (DateTimeException | MyException e) {
                 throw new MyException("Введите корректную дату");
             }
         }
