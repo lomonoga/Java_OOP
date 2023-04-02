@@ -5,7 +5,7 @@ import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Contract;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,8 @@ public class Task {
         studentAndMark = new HashMap<>();
     }
 
-    private Task(@NotNull TaskBuilder taskBuilder){
+    @Contract(pure = true)
+    private Task(TaskBuilder taskBuilder){
         this.nameTask = taskBuilder.nameTask;
         this.studentAndMark = taskBuilder.studentAndMark;
         this.budget = taskBuilder.budget;
