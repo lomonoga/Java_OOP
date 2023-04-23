@@ -7,8 +7,12 @@ import firstTask.MyException;
  * Класс хранит оценку и балл студента
  */
 public class Assessment {
-    public int points;
-    public Grade grade;
+    private int points;
+    private Grade grade;
+
+    public Grade getGrade() {
+        return grade;
+    }
 
     /**
      * @param points Балл студента в диапозоне от 0 до 100
