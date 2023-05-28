@@ -6,5 +6,6 @@ public class Main {
         System.out.println(new Student("1", "0","1").id);
         System.out.println(new Student("1", "0","1").id);*/
        /* System.out.println(new Task(3,4).getNumberOfTask());*/
+        while (true);
     }
 }
